@@ -1,0 +1,55 @@
+.form-card {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+
+    width: 30vw;
+    height: 90vh;
+    border-radius: 50px;
+    background-color: #ffffff;
+    -webkit-box-shadow: -10px 10px 20px 0px rgba(0,0,0,0.5); 
+    box-shadow: -10px 10px 20px 0px rgba(0,0,0,0.5);
+}
+
+
+.form-card .main-logo {
+    width: 15vw;
+}
+
+
+.form-card .secondary-logo {
+    width: 10vw;
+}
+
+
+.form-card .auth-form {
+    width: 90%;
+    margin: 50px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.form-card .auth-form .auth-input {
+    width: 70%;
+    margin: 15px;
+    border: none;
+    outline: none;
+    padding: 5px 10px;
+    font-size: 16px;
+    text-align: center;
+    border-bottom: 1px solid rgba(0,0,0,0.5);
+}
+
+.form-card .auth-form .auth-input:focus {
+    border-bottom: 1px solid rgba(0,150,255,0.5);
+}
+
+
+.form-card .auth-form #login-button {
+    margin-top: 25px;
+    margin-bottom: 50px;
+}
