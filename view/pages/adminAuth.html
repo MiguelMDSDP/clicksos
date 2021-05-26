@@ -10,7 +10,7 @@
     <title>Click S.O.S.</title>
 
     <link rel="stylesheet" href="../assets/styles/main.css">
-    <link rel="stylesheet" href="../assets/styles/index.css">
+    <link rel="stylesheet" href="../assets/styles/auth.css">
     <link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon">
 </head>
 
@@ -21,13 +21,14 @@
                 src="../assets/images/main-logo.png"
             />
 
-            <form action="api/scripts/authAdmin.php" method="POST" class="auth-form">
+            <form action="../../api/scripts/auth.php" method="POST" class="auth-form" id="auth-form">
                 <input class="auth-input"
                     name="username"
                     id="username-input"
                     type="text"
                     placeholder="Nome de Usuário"
                 />
+                <span class="form-error" id="username-error"></span>
 
                 <input class="auth-input"
                     name="password"
@@ -35,17 +36,16 @@
                     type="password"
                     placeholder="Senha"
                 />
+                <span class="form-error" id="password-error"></span>
 
-                <button class="red-button large-button" id="login-button" type="submit">
+                <button class="red-button large-button disabled-button" id="login-button" type="submit">
                     Entrar
                 </button>
             </form>
-
-            <a class="main-link" href="./register.html">
-                Cadastre-se
-            </a>
         </div>
     </main>
 </body>
+
+<script src="../scripts/auth.js"></script>
 
 </html>

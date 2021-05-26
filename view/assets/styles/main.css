@@ -18,14 +18,14 @@ body {
 
 
 .form-error {
-    color: #EA2027;
+    color: #d63031;
     font-size: small;
     margin-top: -5px;
     transition: 0.5s;
 }
 
 .input-error {
-    border-bottom: 1px solid #EA2027 !important;
+    border-bottom: 1px solid #d63031 !important;
 }
 
 
@@ -37,17 +37,7 @@ body {
     outline: none;
     transition: 0.5s;
     border-radius: 50px;
-    background-color: #EA2027;
-}
-
-.large-button {
-    font-size: 16px;
-    padding: 10px 40px;
-}
-
-.disabled {
-    cursor: not-allowed;
-    opacity: 0.6;
+    background-color: #d63031;
 }
 
 .red-button:not(.disabled):hover {
@@ -55,6 +45,37 @@ body {
     -webkit-box-shadow: -10px 10px 20px 0px rgba(0,0,0,0.5); 
     box-shadow: -10px 10px 20px 0px rgba(0,0,0,0.5);
     transform: translateY(-5%);
+}
+
+
+
+.green-button {
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    transition: 0.5s;
+    border-radius: 50px;
+    background-color: #00b894;
+}
+
+.green-button:not(.disabled):hover {
+    opacity: 0.9;
+    -webkit-box-shadow: -10px 10px 20px 0px rgba(0,0,0,0.5); 
+    box-shadow: -10px 10px 20px 0px rgba(0,0,0,0.5);
+    transform: translateY(-5%);
+}
+
+
+
+.large-button {
+    font-size: 16px;
+    padding: 10px 40px;
+}
+
+.disabled-button {
+    cursor: not-allowed;
+    opacity: 0.6;
 }
 
 

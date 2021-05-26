@@ -15,6 +15,12 @@ loginButton.addEventListener("click", (event) => {
             document.getElementById("password-error").innerHTML = "* Informe sua senha!";
             if (!passwordInput.classList.contains("input-error")) passwordInput.classList.add("input-error");
         }
+        if (passwordRepeatInput) {
+            if (passwordRepeatInput.value === "") {
+                document.getElementById("password-repeat-error").innerHTML = "* Repita a senha!";
+                if (!passwordRepeatInput.classList.contains("input-error")) passwordRepeatInput.classList.add("input-error");
+            }
+        }
     } else if (passwordRepeatInput) {
         if (passwordRepeatInput.value === "") {
             event.preventDefault();
@@ -78,12 +84,14 @@ const verifyForm = () => {
     const loginButton = document.getElementById("login-button");
 
     if (username === "" || password === "") {
-        if (!loginButton.classList.contains("disabled")) loginButton.classList.add("disabled");
+        if (!loginButton.classList.contains("disabled-button")) loginButton.classList.add("disabled-button");
     } else if (passwordRepeatInput) {
-        if (passwordRepeatInput !== "") {
-            if (loginButton.classList.contains("disabled")) loginButton.classList.remove("disabled");
+        if (passwordRepeatInput.value === "") {
+            if (!loginButton.classList.contains("disabled-button")) loginButton.classList.add("disabled-button");
+        } else {
+            if (loginButton.classList.contains("disabled-button")) loginButton.classList.remove("disabled-button");
         }
     } else {
-        if (loginButton.classList.contains("disabled")) loginButton.classList.remove("disabled");
+        if (loginButton.classList.contains("disabled-button")) loginButton.classList.remove("disabled-button");
     }
 }
