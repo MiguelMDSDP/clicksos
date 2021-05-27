@@ -9,19 +9,106 @@ body {
 
 
 .table-wrapper {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-
     width: 85%;
     height: 80%;
+    overflow-y: auto !important;
     border-radius: 25px;
     background-color: #ffffff;
-    -webkit-box-shadow: -10px 10px 20px 0px rgba(0,0,0,0.5); 
-    box-shadow: -10px 10px 20px 0px rgba(0,0,0,0.5);
 }
 
+
+.table-wrapper .item {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    padding: 5px 0;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    transition: 0.5s;
+    user-select: none;
+}
+
+
+.table-wrapper .item:hover {
+    cursor: pointer;
+    background-color: #dfe6e975;
+}
+
+
+.table-wrapper .item .icon-container {
+    width: 5%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.table-wrapper .item .icon-container .icon {
+    width: 75%;
+}
+
+
+.table-wrapper .item .title-container {
+    width: 10%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.table-wrapper .item .title-container .title {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+
+.table-wrapper .item .description-container {
+    width: 75%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.table-wrapper .item .description-container .description {
+    font-size: 14px;
+    text-align: justify;
+}
+
+
+.table-wrapper .item .button-container {
+    width: 10%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.table-wrapper .item .button-container .remove-button {
+    width: 35%;
+    border: 1px solid #dfe6e9;
+    cursor: pointer;
+    outline: none;
+    padding: 2px 0;
+    transition: 0.5s;
+    border-radius: 5px;
+    background-color: transparent;
+}
+
+
+.table-wrapper .item .button-container .remove-button:hover {
+    background-color: #dfe6e9;
+}
+
+
+.table-wrapper .item .button-container .remove-button .icon {
+    width: 45%;
+}
 
 
 .buttons-wrapper {
@@ -33,6 +120,6 @@ body {
 }
 
 
-.buttons-wrapper > button {
+.buttons-wrapper > a > button {
     margin: 0 1vw !important;
 }
