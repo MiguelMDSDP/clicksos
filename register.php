@@ -16,8 +16,7 @@
 
 <body>
     <main class="main-container">
-        <?php if (isset($_COOKIE['user'])) {
-            echo("<script>console.log('YO')</script>");?>
+        <?php if (isset($_COOKIE['user'])) { ?>
             <div class="form-card">
                 <img class="main-logo"
                     src="assets/images/main-logo.png"

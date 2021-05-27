@@ -50,26 +50,31 @@
 <body>
     <?php if (isset($_COOKIE['user']) || $GLOBALS['authenticated']) { ?>
         <main class="table-wrapper">
-            <section class="item">
-                <div class="icon-container">
-                    <img src="assets/images/secondary-logo.png" class="icon" />
-                </div>
-                <div class="title-container">
-                    <span class="title">Teste</span>
-                </div>
-                <div class="description-container">
-                    <span class="description">
-                        Nesse pull request, o gerenciador de dependências do frontend otimizou a renderização
-                        da execução de requisições eficientes na API. Mais além do princípio de prazer, a 
-                        ausência de autoridade é o ponto de fundação de nosso próprio desejo que não há recusa.
-                    </span>
-                </div>
-                <div class="button-container">
-                    <button class="remove-button">
-                        <img src="assets/images/remove-icon.png" class="icon" />
-                    </button>
-                </div>
-            </section>
+            <?php 
+                if (file_exists('database/os.xml')) {
+                    $serviceorders = simplexml_load_file('database/os.xml');
+                } else {
+                    exit('Falha ao abrir os.xml.');
+                }
+
+                foreach($serviceorders->children() as $os) { ?>
+                    <section class="item">
+                        <div class="icon-container">
+                            <img src="assets/images/secondary-logo.png" class="icon" />
+                        </div>
+                        <div class="title-container">
+                            <span class="title">
+                                <?php echo($os->title) ?>
+                            </span>
+                        </div>
+                        <div class="description-container">
+                            <span class="description">
+                                <?php echo($os->description) ?>
+                            </span>
+                        </div>
+                    </section>
+                <?php }
+            ?>
         </main>
 
         <footer class="buttons-wrapper">
@@ -89,7 +94,5 @@
         <h2>Usuário ou senha incorretos. <a href='index.php'>Tente novamente</a></h2>
     <?php } else { header('Location: index.php'); } ?>
 </body>
-
-<script src="scripts/list.js"></script>
 
 </html>
