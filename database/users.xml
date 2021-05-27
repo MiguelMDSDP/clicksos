@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <users>
-    <user username="miguelmdsdp" password="aluno" />
-    <user username="dianaada" password="professora" />
+    <user>
+        <username>miguelmdsdp</username>
+        <password>aluno</password>
+    </user>
+    <user>
+        <username>dianaada</username>
+        <password>professora</password>
+    </user>
 </users>

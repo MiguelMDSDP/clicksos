@@ -1,18 +1,18 @@
 const registerButton = document.getElementById("register-button");
 const titleInput = document.querySelector('#title-input');
-const descriptionInput = document.querySelector('#description-textarea');
+const descriptionTextarea = document.querySelector('#description-textarea');
 
 
 registerButton.addEventListener("click", (event) => {
-    if (titleInput.value === "" || descriptionInput.value === "") {
+    if (titleInput.value === "" || descriptionTextarea.value === "") {
         event.preventDefault();
         if (titleInput.value === "") {
             document.getElementById("title-error").innerHTML = "* Informe o título!";
             if (!titleInput.classList.contains("input-error")) titleInput.classList.add("input-error");
         }
-        if (descriptionInput.value === "") {
+        if (descriptionTextarea.value === "") {
             document.getElementById("description-error").innerHTML = "* Informe a descrição!";
-            if (!descriptionInput.classList.contains("textarea-error")) descriptionInput.classList.add("textarea-error");
+            if (!descriptionTextarea.classList.contains("textarea-error")) descriptionTextarea.classList.add("textarea-error");
         }
     }
 });
@@ -33,14 +33,14 @@ titleInput.addEventListener("keyup", () => {
 
 
 
-descriptionInput.addEventListener("keyup", () => {
+descriptionTextarea.addEventListener("keyup", () => {
     verifyForm();
 
-    if (descriptionInput.value === "") {
-        if (!descriptionInput.classList.contains("textarea-error")) descriptionInput.classList.add("textarea-error");
+    if (descriptionTextarea.value === "") {
+        if (!descriptionTextarea.classList.contains("textarea-error")) descriptionTextarea.classList.add("textarea-error");
         document.getElementById("description-error").innerHTML = "* Informe a descrição!";        
     } else {
-        if (descriptionInput.classList.contains("textarea-error")) descriptionInput.classList.remove("textarea-error");
+        if (descriptionTextarea.classList.contains("textarea-error")) descriptionTextarea.classList.remove("textarea-error");
         document.getElementById("description-error").innerHTML = "";
     }
 });
@@ -48,7 +48,7 @@ descriptionInput.addEventListener("keyup", () => {
 
 
 const verifyForm = () => {
-    if (titleInput.value === "" || descriptionInput.value === "") {
+    if (titleInput.value === "" || descriptionTextarea.value === "") {
         if (!registerButton.classList.contains("disabled-button")) registerButton.classList.add("disabled-button");
     } else {
         if (registerButton.classList.contains("disabled-button")) registerButton.classList.remove("disabled-button");

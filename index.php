@@ -1,5 +1,7 @@
-<!DOCTYPE html>
+<?php if (isset($_COOKIE['user'])) setcookie('user', "", -3600, '/'); ?>
 
+
+<!DOCTYPE html>
 <html lang="pt-br">
     
 <head>
@@ -21,7 +23,7 @@
                 src="assets/images/main-logo.png"
             />
 
-            <form action="" method="POST" class="auth-form" id="auth-form">
+            <form action="list.php" method="POST" class="auth-form" id="auth-form">
                 <input class="auth-input"
                     name="username"
                     id="username-input"
@@ -38,7 +40,7 @@
                 />
                 <span class="form-error" id="password-error"></span>
 
-                <button class="red-button large-button disabled-button" id="login-button" type="submit">
+                <button class="red-button large-button disabled-button" id="login-button" name="login-button" type="submit">
                     Entrar
                 </button>
             </form>
