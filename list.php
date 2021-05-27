@@ -24,8 +24,28 @@
         return $isValid;
     }
 
-    if ($_SERVER["REQUEST_METHOD"] == "POST" || isset($_COOKIE['user'])) {
-        if (validateLogin(testInput($_POST['username']), testInput($_POST['password']))) {
+    function createOS($title, $description) {
+        if (file_exists('database/os.xml')) {
+            $serviceorders = simplexml_load_file('database/os.xml');
+        } else {
+            exit('Falha ao abrir os.xml.');
+        }
+
+        $node = $serviceorders->addChild("os");
+        $node->addChild("title", $title);
+        $node->addChild("description", $description);
+
+        $save = simplexml_import_dom($serviceorders);
+        $save->saveXML('database/os.xml');
+    }
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        if (isset($_POST['title'])) {
+            createOS(
+                testInput($_POST['title']),
+                testInput($_POST['description'])
+            );
+        } else if (validateLogin(testInput($_POST['username']), testInput($_POST['password']))) {
             setcookie('user', testInput($_POST['username']), time() + 3600, '/');
             $GLOBALS['authenticated'] = true;
         } else {

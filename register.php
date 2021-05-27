@@ -22,7 +22,7 @@
                     src="assets/images/main-logo.png"
                 />
 
-                <form action="" method="POST" class="register-form" id="register-form">
+                <form action="list.php" method="POST" class="register-form" id="register-form">
                     <input class="register-input"
                         name="title"
                         id="title-input"
@@ -44,7 +44,7 @@
 
                     <div class="buttons-wrapper">
                         <button class="green-button small-button disabled-button" id="register-button" type="submit">
-                            Entrar
+                            Cadastrar
                         </button>
                         <a href="./list.php">
                             <button class="red-button small-button" id="cancel-button" type="button">
